@@ -1,71 +1,77 @@
-# HbA1c_Impact_Study
-Data analytics project examining the association between HbA1c testing and 30-day hospital readmission among diabetic patients, using SQL, Python, and Power BI. DEPI Graduation Project.
+# 🏥 HbA1c Impact Study: 30-Day Hospital Readmission Analysis
 
-hba1c-impact-study/
+<div align="center">
+
+[![Status](https://img.shields.io/badge/Status-Completed-success.svg)]()
+[![Python](https://img.shields.io/badge/Python-3.8%252B-blue.svg)](https://www.python.org/)
+[![SQL](https://img.shields.io/badge/SQL-Server-orange.svg)]()
+[![Power BI](https://img.shields.io/badge/Power%252BI-Dashboard-yellow.svg)]()
+[![DEPI Graduation Project](https://img.shields.io/badge/DEPI-Graduation%20Project-purple.svg)]()
+
+*A comprehensive data analytics project examining the association between HbA1c testing and 30-day hospital readmissions among diabetic patients.*
+
+</div>
+
+---
+
+## 📌 Table of Contents
+- [About the Project](#-about-the-project)
+- [Project Architecture & Workflow](#-project-architecture--workflow)
+- [Repository Structure](#-repository-structure)
+- [Tech Stack](#-tech-stack)
+- [Key Features & Analysis](#-key-features--analysis)
+- [Dashboard Preview](#-dashboard-preview)
+- [Documentation & Resources](#-documentation--resources)
+- [How to Run the Project](#-how-to-run-the-project)
+- [Project Team & Acknowledgments](#-project-team--acknowledgments)
+
+---
+
+## 📖 About the Project
+Hospital readmissions within 30 days are a critical metric for healthcare quality and patient care efficiency, especially for chronic conditions like diabetes. This project—completed as part of the **Digital Egypt Pioneers Initiative (DEPI)**—investigates whether regular HbA1c testing and specific clinical factors significantly impact 30-day readmission rates.
+
+Using a robust pipeline covering **SQL** (ETL & Modeling), **Python** (Advanced EDA & Statistical Modeling), and **Power BI** (Interactive Dashboard), we transformed raw hospital data into actionable healthcare insights.
+
+---
+
+## 🔄 Project Architecture & Workflow
+1. **Data Ingestion & Staging:** Raw CSV data loaded into SQL Server staging tables.
+2. **Data Modeling & ETL:** Building a Star Schema (Dimension and Fact tables) and creating clean views and procedures.
+3. **Exploratory Data Analysis (EDA) & Statistics:** Using Python for data cleaning, Chi-Square tests of independence, and Logistic Regression modeling.
+4. **Visualization:** Developing an interactive Power BI dashboard to track key clinical and demographic metrics.
+
+---
+
+## 📁 Repository Structure
+
+```text
+HbA1c_Impact_Study/
 │
 ├── README.md
 ├── .gitignore
 ├── requirements.txt
 │
 ├── data/
-│   ├── raw/
-│   │   ├── diabetic_data.csv
-│   │   └── IDS_mapping.csv
-│   └── processed/
-│       ├── diabetic_data_clean.csv
-│       └── icd9_diagnosis_groups.csv
+│   ├── raw/                  # Original raw datasets (diabetic data & mapping)
+│   └── processed/            # Cleaned datasets ready for analysis
 │
 ├── sql/
-│   ├── database/
-│   │   └── 01_create_database.sql
-│   ├── tables/
-│   │   ├── 02_create_staging_table.sql
-│   │   ├── 03_create_dimension_tables.sql
-│   │   └── 04_create_fact_table.sql
-│   ├── etl/
-│   │   ├── 05_load_raw_data.sql
-│   │   └── 06_clean_and_transform.sql
-│   ├── views/
-│   │   ├── vw_readmission_overview.sql
-│   │   ├── vw_hba1c_impact.sql
-│   │   ├── vw_demographics.sql
-│   │   └── vw_clinical_factors.sql
-│   ├── procedures/
-│   │   └── sp_refresh_clean_data.sql
-│   └── analysis/
-│       ├── 01_readmission_rate_queries.sql
-│       ├── 02_hba1c_analysis_queries.sql
-│       └── 03_subgroup_analysis_queries.sql
+│   ├── database/             # Database creation scripts
+│   ├── tables/               # Staging, Dimension, and Fact tables
+│   ├── etl/                  # Data loading and transformation scripts
+│   ├── views/                # Analytical SQL views
+│   ├── procedures/           # Stored procedures
+│   └── analysis/             # SQL queries for readmission & HbA1c insights
 │
 ├── python/
-│   ├── data_cleaning/
-│   │   └── 01_data_cleaning.ipynb
-│   ├── eda/
-│   │   └── 02_eda.ipynb
-│   └── analysis/
-│       ├── 03_chi_square_tests.ipynb
-│       └── 04_logistic_regression.ipynb
+│   ├── data_cleaning/        # Data pre-processing notebooks
+│   ├── eda/                  # Exploratory Data Analysis notebooks
+│   └── analysis/             # Statistical tests & Logistic Regression models
 │
 ├── powerbi/
-│   ├── dashboard/
-│   │   └── hba1c_impact_dashboard.pbix
-│   └── screenshots/
-│       └──  .png)
+│   ├── dashboard/            # Power BI file (.pbix)
+│   └── screenshots/          # Dashboard preview images
 │
-├── documentation/
-│   ├── project_proposal.docx            ✅
-│   ├── data_dictionary.xlsx             ✅
-│   ├── milestones_tracker.xlsx          ✅
-│   ├── er_diagram.png
-│   ├── data_cleaning_log.md
-│   ├── kpi_definitions.md
-│   ├── egypt_context_brief.md
-│   ├── analysis_report.docx
-│   ├── user_manual.md
-│   └── final_report.docx
-│
-├── presentation/
-│   └── hba1c_impact_study_final.pptx
-│
-└── video/
-    └── project_demo.mp4  (أو رابط في الـ README لو الملف كبير)
+├── documentation/            # Project proposals, data dictionary, ERD, reports
+├── presentation/             # Final PowerPoint presentation
+└── video/                    # Project demo video (or link)
